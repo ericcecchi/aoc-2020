@@ -1,9 +1,17 @@
 package days
 
+import "io/ioutil"
+
 func check(e error) {
 	if e != nil {
 		panic(e)
 	}
+}
+
+func readFile(s string) string {
+	data, err := ioutil.ReadFile(s)
+	check(err)
+	return string(data)
 }
 
 type set struct {
